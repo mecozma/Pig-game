@@ -13,7 +13,6 @@ let scores, roundScore, activePlayer, gamePlaying;
 
 init();
 
-var lastDice;
 
 // Event listeners
 document.querySelector(".btn-roll").addEventListener("click", () => {
@@ -57,8 +56,17 @@ document.querySelector(".btn-hold").addEventListener("click", () => {
     document.querySelector("#score-" + activePlayer).textContent =
       scores[activePlayer];
 
+      var input = document.querySelector('.final-score').value;
+      var vinningScore;
+      console.log(input);
+      if(input) {
+        vinningScore = input;
+      } else {
+        vinningScore = 100;
+      }
+
     // Check if the user won;
-    if (scores[activePlayer] >= 5) {
+    if (scores[activePlayer] >= vinningScore) {
       alert("You Won!!!");
       document.querySelector("#name-" + activePlayer).textContent = "Winner";
       document.querySelector(".dice").style.display = "none";
@@ -88,6 +96,7 @@ function nextPlayer() {
   document.querySelector(".dice").style.display = "none";
 }
 
+
 document.querySelector(".btn-new").addEventListener("click", init);
 
 function init() {
@@ -96,6 +105,7 @@ function init() {
   activePlayer = 0;
   gamePlaying = true;
 
+  
   document.querySelector(".dice").style.display = "none";
   document.getElementById("score-0").textContent = "0";
   document.getElementById("score-1").textContent = "0";
