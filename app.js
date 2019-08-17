@@ -3,8 +3,8 @@ GAME RULES:
 
 - The game has 2 players, playing in rounds.
 - In each turn, a player rolls a dice as many times as they whish. Each result get added to their ROUND score.
-- BUT, if the player rolls a 1, all their ROUND score gets lost. After that, it's the next player's turn
-- The player can choose to 'Hold', which means that their ROUND score gets added to their GLBAL score. After that, it's the next player's turn
+- BUT, if the player rolls a 1, all their ROUND score gets lost. After that, it's the next player's turn.
+- The player can choose to 'Hold', which means that their ROUND score gets added to their GLBAL score. After that, it's the next player's turn.
 - The first player to reach 100 points on GLOBAL score wins the game.
 
 */
@@ -12,6 +12,18 @@ GAME RULES:
 let scores, roundScore, activePlayer, gamePlaying;
 
 init();
+
+// rules pop up on page load
+var result = (function showRules() {
+	alert("GAME RULES \n \n" +
+	"▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n" +
+	"• The game has 2 players, playing in rounds. \n" +
+	"• In each turn, a player rolls a dice as many times as they whish. Each result get added to their ROUND score. \n" +
+	"• BUT, if the player rolls a 1, all their ROUND score gets lost. After that, it's the next player's turn. \n" +
+	"• The player can choose to 'Hold', which means that their ROUND score gets added to their GLOBAL score. After that, it's the next player's turn \n" +
+	"• The first player to reach 100 points on GLOBAL score wins the game.");
+})();
+result;
 
 // Event listeners
 document.querySelector(".btn-roll").addEventListener("click", () => {
@@ -113,8 +125,8 @@ function init() {
   document.querySelector(`.player-1-panel`).classList.remove("active");
   document.querySelector(`.player-0-panel`).classList.add("active");
 }
-// Alert for rules
 
+// Alert for rules
 function showRules() {
 	alert("GAME RULES \n \n" +
 	"▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n" +
