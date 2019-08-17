@@ -145,8 +145,15 @@ i {
   transition: margin 0.3s;
 }
 
+.btn-rules {
+	top: 30px;
+	left: 15%;
+}
 .btn-new {
-  top: 45px;
+	top: 30px;
+	left: auto;
+	right: 0;
+
 }
 .btn-roll {
   top: 403px;
